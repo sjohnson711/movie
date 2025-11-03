@@ -40,7 +40,7 @@ export default function About() {
         believe in the super powers of having a Mental Health advocate in all
         work places. For some reason we have become reactive instead of
         proactive when it comes to Mental Health concerns. I hope this project
-        brings a sense of awarness to those who take the time to check it out.
+        brings a sense of awareness to those who take the time to check it out.
       </p>
       <h2>~Blessings, Seth Johnson</h2>
     </Abouts>
