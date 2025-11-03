@@ -26,7 +26,7 @@ export default function About() {
   return (
     <Abouts className="about">
       <H1>Seth Johnson</H1>
-      <Image src="src/assets/Weekend In the Life.png" alt="picture" />
+      <Image src="../public/Weekend In the Life.png" alt="picture" />
       <p>
         Mood Movie is an interactive app designed to help users find the perfect
         movie based on how they are feeling. Whether you are happy, sad, excited
