@@ -76,6 +76,10 @@ const Favorites = styled.button`
   font-weight: bold;
   border: none;
 
+  .favored {
+    background-color: red;
+  }
+
   &:hover {
     opacity: 0.8;
   }
@@ -88,7 +92,7 @@ export default function MoodSelector() {
   const [userSelect, setUserSelect] = useState("");
   const [matchingMovie, setMatchingMovie] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
+  const [favoritedMovies, setFavoritedMovies] = useState(new Set());
 
   //
   function handleMoodClick(moodName) {
@@ -162,9 +166,17 @@ export default function MoodSelector() {
               <Favorites
                 onClick={() => {
                   addFavorites(movie);
+                  setFavoritedMovies((prev) => new Set([...prev, movie.id]));
                 }}
+                style={
+                  favoritedMovies.has(movie.id)
+                    ? { backgroundColor: "red" }
+                    : { backgroundColor: "lightpurple" }
+                }
               >
-                Add To Favorites
+                {favoritedMovies.has(movie.id)
+                  ? "♥️ Favorited ♥️"
+                  : "Add to Favorites"}
               </Favorites>
             </MovieItem>
           ))}
