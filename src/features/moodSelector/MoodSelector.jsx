@@ -162,10 +162,9 @@ export default function MoodSelector() {
               <Favorites
                 onClick={() => {
                   addFavorites(movie);
-                  setIsClicked(true);
                 }}
               >
-                {isClicked ? "Favorited❤️" : "Add to Favorites"}
+                Add To Favorites
               </Favorites>
             </MovieItem>
           ))}
