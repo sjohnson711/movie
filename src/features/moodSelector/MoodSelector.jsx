@@ -88,6 +88,7 @@ export default function MoodSelector() {
   const [userSelect, setUserSelect] = useState("");
   const [matchingMovie, setMatchingMovie] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   //
   function handleMoodClick(moodName) {
@@ -158,8 +159,13 @@ export default function MoodSelector() {
                 alt={movie.title}
               />
               <p>{movie.title}</p>
-              <Favorites onClick={() => addFavorites(movie)}>
-                Add to Favorites
+              <Favorites
+                onClick={() => {
+                  addFavorites(movie);
+                  setIsClicked(true);
+                }}
+              >
+                {isClicked ? "Favorited❤️" : "Add to Favorites"}
               </Favorites>
             </MovieItem>
           ))}
